@@ -23,7 +23,8 @@
 
 		// Setup the WebSocket connection and start the player
 		//var client = new WebSocket('ws://' + window.location.hostname + ':${WS_PORT}/');
-		var client = new WebSocket('ws://tankplay1ws.nat.aiparker.com/');
+		//websocket内网穿透地址
+		var client = new WebSocket('ws://xxx.xxx.xxx/');
 		var player = new jsmpeg(client, { canvas: canvas });
 
 	</script>
