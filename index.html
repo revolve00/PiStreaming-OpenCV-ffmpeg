@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="initial-scale=1" />
+	<title>jsmpeg streaming</title>
+	<link rel="stylesheet" text="text/css" href="index.css" />
+</head>
+
+<body>
+	<canvas id="videoCanvas" class="container">
+	</canvas>
+
+	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="jsmpg.js"></script>
+	<script type="text/javascript">
+
+		// Show loading notice
+		var canvas = document.getElementById('videoCanvas');
+		var ctx = canvas.getContext('2d');
+		ctx.fillStyle = '${COLOR}';
+		ctx.fillText('Loading...', canvas.width / 2 - 30, canvas.height / 3);
+
+		// Setup the WebSocket connection and start the player
+		//var client = new WebSocket('ws://' + window.location.hostname + ':${WS_PORT}/');
+		var client = new WebSocket('ws://tankplay1ws.nat.aiparker.com/');
+		var player = new jsmpeg(client, { canvas: canvas });
+
+	</script>
+</body>
+
+</html>
